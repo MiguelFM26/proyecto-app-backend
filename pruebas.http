@@ -1,0 +1,79 @@
+### Probar listado de personas
+GET http://localhost:3000/api/personas
+
+### Probar registrar persona (Formulario con Foto)
+POST http://localhost:3000/api/personas
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="nombres"
+
+Juan Carlos
+--boundary
+Content-Disposition: form-data; name="apellidos"
+
+Perez Choque
+--boundary
+Content-Disposition: form-data; name="telefono"
+
+901090853
+--boundary
+Content-Disposition: form-data; name="correo"
+
+juan.perez@email.com
+--boundary
+Content-Disposition: form-data; name="foto"; filename="test.png"
+Content-Type: image/png
+
+< ./index.js
+--boundary--
+
+### Probar registrar Lugar Turístico (Foto + Coordenadas GPS)
+POST http://localhost:3000/api/lugares-turisticos
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="nombre"
+
+Mirador El Condor
+--boundary
+Content-Disposition: form-data; name="descripcion"
+
+Un hermoso mirador con una vista espectacular.
+--boundary
+Content-Disposition: form-data; name="latitud"
+
+-15.8422
+--boundary
+Content-Disposition: form-data; name="longitud"
+
+-70.0215
+--boundary
+Content-Disposition: form-data; name="foto"; filename="lugar.png"
+Content-Type: image/png
+
+< ./index.js
+--boundary--
+
+### Probar registrar Matrícula
+POST http://localhost:3000/api/matriculas
+Content-Type: application/json
+
+{
+    "estudiante": "Miguel Flores",
+    "curso": "Programación Móvil",
+    "codigo_matricula": "MAT-2026-001",
+    "costo": 150.00
+}
+
+### Probar registrar Vehículo
+POST http://localhost:3000/api/vehiculos
+Content-Type: application/json
+
+{
+    "marca": "Toyota",
+    "modelo": "Hilux",
+    "placa": "V1A-853",
+    "anio": 2022,
+    "color": "Gris"
+}

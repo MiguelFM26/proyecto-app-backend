@@ -1,0 +1,36 @@
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+require('dotenv').config();
+
+const app = express();
+
+// Middlewares
+app.use(cors());
+app.use(express.json());
+
+// HACER PÚBLICA LA CARPETA UPLOADS (Para poder ver las fotos desde afuera)
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// ENLAZAR LAS RUTAS DE PRODUCTOS
+// Esto hace que todas las rutas dentro de rutas/productos.js empiecen con /api/productos
+// ... código anterior de middlewares ...
+
+// ENLAZAR LAS RUTAS
+app.use('/api/productos', require('./rutas/productos'));
+app.use('/api/noticias', require('./rutas/noticias')); 
+app.use('/api/tareas', require('./rutas/tareas'));     
+app.use('/api/personas', require('./rutas/personas'));
+app.use('/api/lugares-turisticos', require('./rutas/lugares_turisticos'));
+
+// ... código posterior de app.listen ...
+
+// Ruta base de información
+app.get('/', (req, res) => {
+    res.json({ mensaje: "API REST funcionando y ordenada." });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
+});
