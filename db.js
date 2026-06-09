@@ -1,7 +1,7 @@
 const mysql = require('mysql2'); // Asegúrate de usar mysql2 para soportar MySQL 8+
 
 const db = mysql.createConnection({
-  host: 'mysql-1039d17b-killerexpert26-d18a.a.aivencloud.com',
+  host: 'mysql-1039d17b-b-killerexpert26-d18a.a.aivencloud.com',
   port: 11112,
   user: 'avnadmin',
   password: 'AVNS_Vbe8jeJJkm7I26scD7R',
