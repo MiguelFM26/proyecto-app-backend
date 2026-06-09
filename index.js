@@ -17,13 +17,14 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // ... código anterior de middlewares ...
 
 // ENLAZAR LAS RUTAS
-app.use('/api/productos', require('./rutas/productos'));
-app.use('/api/noticias', require('./rutas/noticias')); 
-app.use('/api/tareas', require('./rutas/tareas'));     
-app.use('/api/personas', require('./rutas/personas'));
-app.use('/api/lugares-turisticos', require('./rutas/lugares_turisticos'));
-app.use('/api/matriculas', require('./rutas/matriculas'));
-app.use('/api/vehiculos', require('./rutas/vehiculos'));
+// ENLAZAR LAS RUTAS (Apuntando a los archivos sueltos en la raíz)
+app.use('/api/productos', require('./productos'));
+app.use('/api/noticias', require('./noticias')); 
+app.use('/api/tareas', require('./tareas'));     
+app.use('/api/personas', require('./personas'));
+app.use('/api/lugares-turisticos', require('./lugares_turisticos'));
+app.use('/api/matriculas', require('./matriculas'));
+app.use('/api/vehiculos', require('./vehiculos'));
 
 // ... código posterior de app.listen ...
 
