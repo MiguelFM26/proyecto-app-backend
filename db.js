@@ -16,7 +16,7 @@ db.connect((error) => {
         console.error('❌ Error al conectar a la Base de Datos:', error.message);
         return;
     }
-    console.log('✅ ¡Conectado exitosamente a la Base de Datos MySQL en XAMPP!');
+    console.log('✅ ¡Conectado exitosamente a la Base de Datos MySQL en la Nube!');
 });
 
 // Exportamos la conexión para que los otros archivos puedan usarla
