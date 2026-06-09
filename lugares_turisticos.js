@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const db = require('../config/db');
+// ANTES: const db = require('../config/db');
+const db = require('./db'); // ✅ AHORA: Apunta al archivo db.js que está suelto a su lado
 
 // Configuración de Multer para guardar las fotos de los paisajes/lugares
 const storage = multer.diskStorage({
