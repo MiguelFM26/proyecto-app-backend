@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/db'); // Importamos la conexión que acabamos de mover
+// ANTES: const db = require('../config/db');
+const db = require('./db'); // ✅ AHORA: Apunta al archivo db.js que está suelto a su lado
 
 // 1. OBTENER TODOS LOS PRODUCTOS (GET)
 // Ruta: http://localhost:3000/api/productos
