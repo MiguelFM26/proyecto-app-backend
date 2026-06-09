@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/db');
+// ANTES: const db = require('../config/db');
+const db = require('./db'); // ✅ AHORA: Apunta al archivo db.js que está suelto a su lado
 
 // 1. LISTAR TODAS LAS NOTICIAS (GET)
 router.get('/', (req, res) => {
