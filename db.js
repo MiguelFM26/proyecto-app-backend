@@ -4,7 +4,7 @@ const db = mysql.createConnection({
   host: 'mysql-1039d17b-killerexpert26-d18a.e.aivencloud.com', // ✅ ¡Corregido con la 'e'!
   port: 11112,
   user: 'avnadmin',
-  password: 'AVNS_Vbe8jeJJkm7I26scD7R',
+  password: 'AVNS_Vbe8jEJJkm7I26scD7R',
   database: 'defaultdb', // ✅ Corregido de 'defaultdh' a 'defaultdb'
   ssl: {
     rejectUnauthorized: false
